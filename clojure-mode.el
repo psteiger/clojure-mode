@@ -6,7 +6,7 @@
 ;;          Lennart Staflin <lenst@lysator.liu.se>
 ;;          Phil Hagelberg <technomancy@gmail.com>
 ;; URL: http://www.emacswiki.org/cgi-bin/wiki/ClojureMode
-;; Version: 1.4
+;; Version: 1.5
 ;; Keywords: languages, lisp
 
 ;; This file is not part of GNU Emacs.
@@ -26,9 +26,7 @@
 
 ;; (0) Add this file to your load-path, usually the ~/.emacs.d directory.
 ;; (1) Either:
-;;     Add these lines to your .emacs:
-;;       (autoload 'clojure-mode "clojure-mode" "A major mode for Clojure" t)
-;;       (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+;;     Add this to your .emacs config: (require 'clojure-mode)
 ;;     Or generate autoloads with the `update-directory-autoloads' function.
 
 ;; The clojure-install function can check out and configure all the
@@ -49,11 +47,6 @@
 ;;   ;; require or autoload paredit-mode
 ;;   (defun lisp-enable-paredit-hook () (paredit-mode 1))
 ;;   (add-hook 'clojure-mode-hook 'lisp-enable-paredit-hook)
-
-;;; Todo:
-
-;; * make install command more recoverable
-;; * hashbang is also a valid comment character
 
 ;;; License:
 
@@ -310,4 +303,7 @@ elements of a def* forms."
             "cons" "concat" "lazy-cat" "cycle" "rest" "frest" "drop"
             "drop-while" "nthrest" "take" "take-while" "take-nth" "butlast"
             "reverse" "sort" "sort-by" "split-at" "partition" "split-with"
-            "first" "ffirst" "rfirst" "when-first" "zipmap" "into%2
+            "first" "ffirst" "rfirst" "when-first" "zipmap" "into" "set" "vec"
+            "to-array-2d" "not-empty" "seq?" "not-every?" "every?" "not-any?"
+            "map" "mapcat" "vector?" "list?" "hash-map" "reduce" "filter"
+            "vals" "keys%2
