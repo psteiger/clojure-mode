@@ -561,11 +561,9 @@ list of those files. Returns () otherwise"
 
     (let ((target-dirs-exist (exist-in-filesystem? target-dirs)))
       (if target-dirs-exist
-	  (error "The following directory(ies) already exist(s): (Clojure already installed?)
-
-at %s:
-%s" src-root
-    (mapconcat 'concat target-dirs-exist ", "))))
+	  (error "The following directory(ies) already exist(s): (already installed?)\nat %s:\n %s"
+		 src-root
+		 (mapconcat 'concat target-dirs-exist ", "))))
 
     (message "Checking out source... this will take a while...")
     (dolist (cmd '("git clone git://github.com/richhickey/clojure.git"
@@ -581,7 +579,7 @@ at %s:
       (error "Couldn't compile Clojure."))
 
     (cd (format "%s/clojure-contrib" src-root))
-^    (shell-command "git checkout clojure-1.0-compatible")
+    (shell-command "git checkout clojure-1.0-compatible")
     (unless (= 0 (shell-command "ant -Dclojure.jar=../clojure/clojure.jar"))
       (error "Couldn't compile Contrib."))
 
